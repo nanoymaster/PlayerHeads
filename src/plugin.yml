@@ -1,5 +1,9 @@
 name: PlayerHeads
+<<<<<<< HEAD
 version: 3.0.0087
+=======
+version: 3.0.0085
+>>>>>>> parent of 2db206b... Changed update to link to curse website, removed in-game update command
 description: Drops a player's head when s/he dies, also mob heads
 authors: [meiskam, zand]
 

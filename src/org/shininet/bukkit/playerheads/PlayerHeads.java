@@ -66,8 +66,12 @@ public final class PlayerHeads extends JavaPlugin implements Listener {
 	private static boolean updateReady = false;
 	private static String updateName = "";
 	private static long updateSize = 0;
+<<<<<<< HEAD
 	public static final String updateSlug = "player-heads";
 	public static int defaultStackSize = 1;
+=======
+	private static final String updateSlug = "player-heads";
+>>>>>>> parent of 2db206b... Changed update to link to curse website, removed in-game update command
 	
 	@Override
 	public void onEnable(){
@@ -118,6 +122,14 @@ public final class PlayerHeads extends JavaPlugin implements Listener {
 		return updateSize;
 	}
 
+<<<<<<< HEAD
+=======
+	public void update() {
+		new Updater(this, updateSlug, getFile(), Updater.UpdateType.NO_VERSION_CHECK, true);
+		updateReady = false;
+	}
+	
+>>>>>>> parent of 2db206b... Changed update to link to curse website, removed in-game update command
 	public static boolean addHead(Player player, String skullOwner) {
 		return addHead(player, skullOwner, defaultStackSize);
 	}
