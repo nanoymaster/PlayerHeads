@@ -115,6 +115,9 @@ public class PlayerHeadsListener implements Listener {
 		case BLAZE:
 			EntityDeathHelper(event, CustomSkullType.BLAZE, plugin.configFile.getDouble("blazedroprate")*lootingrate);
 			break;
+		case SILVERFISH:
+			EntityDeathHelper(event, CustomSkullType.BLAZE, plugin.configFile.getDouble("silverfishdroprate")*lootingrate);
+			break;
 		}
 	}
 	
@@ -147,6 +150,8 @@ public class PlayerHeadsListener implements Listener {
 						PlayerHeads.formatMsg(player, Lang.CLICKINFO2, CustomSkullType.BLAZE.getDisplayName());
 					} else if (ownerStrip.equals(CustomSkullType.ENDERMAN.getOwner())) {
 						PlayerHeads.formatMsg(player, Lang.CLICKINFO2, CustomSkullType.ENDERMAN.getDisplayName());
+					} else if (ownerStrip.equals(CustomSkullType.SILVERFISH.getOwner())) {
+						PlayerHeads.formatMsg(player, Lang.CLICKINFO2, CustomSkullType.SILVERFISH.getDisplayName());
 					} else if (ownerStrip.equals(CustomSkullType.SPIDER.getOwner())) {
 						PlayerHeads.formatMsg(player, Lang.CLICKINFO2, CustomSkullType.SPIDER.getDisplayName());
 					} else {

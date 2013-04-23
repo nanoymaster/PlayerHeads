@@ -52,6 +52,7 @@ public final class PlayerHeads extends JavaPlugin implements Listener {
 			put("spiderdroprate", configType.DOUBLE);
 			put("endermandroprate", configType.DOUBLE);
 			put("blazedroprate", configType.DOUBLE);
+			put("silverfishdroprate", configType.DOUBLE);
 			put("fixcase", configType.BOOLEAN);
 			put("autoupdate", configType.BOOLEAN);
 			put("broadcast", configType.BOOLEAN);
@@ -67,6 +68,10 @@ public final class PlayerHeads extends JavaPlugin implements Listener {
 	private static String updateName = "";
 	private static long updateSize = 0;
 	public static final String updateSlug = "player-heads";
+	public static final String customSpider = "Kelevra_V";
+	public static final String customEnderman = "Violit";
+	public static final String customBlaze = "Blaze_Head"; 
+	public static final String customSilverfish = "AlexVMiner"; 
 	public static int defaultStackSize = 1;
 
 	
@@ -119,17 +124,12 @@ public final class PlayerHeads extends JavaPlugin implements Listener {
 		return updateSize;
 	}
 
-<<<<<<< HEAD
-=======
+
 	public void update() {
 		new Updater(this, updateSlug, getFile(), Updater.UpdateType.NO_VERSION_CHECK, true);
 		updateReady = false;
 	}
 	
->>>>>>> parent of 2db206b... Changed update to link to curse website, removed in-game update command
-	public static boolean addHead(Player player, String skullOwner) {
-		return addHead(player, skullOwner, defaultStackSize);
-	}
 
 	public static boolean addHead(Player player, String skullOwner, int quantity) {
 		PlayerInventory inv = player.getInventory();
@@ -189,6 +189,8 @@ public final class PlayerHeads extends JavaPlugin implements Listener {
 			return Skull(CustomSkullType.ENDERMAN, quantity);
 		} else if (skullOwnerLC.equals("#blaze")) {
 			return Skull(CustomSkullType.BLAZE, quantity);
+		} else if (skullOwnerLC.equals("#silverfish")) {
+			return Skull(CustomSkullType.SILVERFISH, quantity);
 		} else {
 			return Skull(skullOwner, null, quantity);
 		}

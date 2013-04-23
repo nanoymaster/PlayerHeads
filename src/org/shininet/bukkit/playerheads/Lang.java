@@ -49,6 +49,7 @@ public class Lang {
 	public static String ERROR_UPDATE_DISABLED;
 	public static String ERROR_UPDATE_NOT_AVAILABLE;
 	public static String ERROR_UPDATER;
+	public static String HEAD_SILVERFISH;
 	public static String HEAD_BLAZE;
 	public static String HEAD_CREEPER;
 	public static String HEAD_ENDERMAN;
