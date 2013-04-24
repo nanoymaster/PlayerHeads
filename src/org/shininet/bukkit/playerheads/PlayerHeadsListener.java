@@ -116,7 +116,10 @@ public class PlayerHeadsListener implements Listener {
 			EntityDeathHelper(event, CustomSkullType.BLAZE, plugin.configFile.getDouble("blazedroprate")*lootingrate);
 			break;
 		case SILVERFISH:
-			EntityDeathHelper(event, CustomSkullType.BLAZE, plugin.configFile.getDouble("silverfishdroprate")*lootingrate);
+			EntityDeathHelper(event, CustomSkullType.SILVERFISH, plugin.configFile.getDouble("silverfishdroprate")*lootingrate);
+			break;
+		case SQUID:
+			EntityDeathHelper(event, CustomSkullType.SQUID, plugin.configFile.getDouble("squiddroprate")*lootingrate);
 			break;
 		}
 	}
@@ -152,6 +155,8 @@ public class PlayerHeadsListener implements Listener {
 						PlayerHeads.formatMsg(player, Lang.CLICKINFO2, CustomSkullType.ENDERMAN.getDisplayName());
 					} else if (ownerStrip.equals(CustomSkullType.SILVERFISH.getOwner())) {
 						PlayerHeads.formatMsg(player, Lang.CLICKINFO2, CustomSkullType.SILVERFISH.getDisplayName());
+					} else if (ownerStrip.equals(CustomSkullType.SQUID.getOwner())) {
+						PlayerHeads.formatMsg(player, Lang.CLICKINFO2, CustomSkullType.SQUID.getDisplayName());
 					} else if (ownerStrip.equals(CustomSkullType.SPIDER.getOwner())) {
 						PlayerHeads.formatMsg(player, Lang.CLICKINFO2, CustomSkullType.SPIDER.getDisplayName());
 					} else {
@@ -189,7 +194,9 @@ public class PlayerHeadsListener implements Listener {
 				String owner = ChatColor.stripColor(skull.getOwner());
 				if ((owner.equals(CustomSkullType.BLAZE.getOwner()))
 						|| (owner.equals(CustomSkullType.ENDERMAN.getOwner()))
-						|| (owner.equals(CustomSkullType.SPIDER.getOwner()))) {
+						|| (owner.equals(CustomSkullType.SPIDER.getOwner()))
+						|| (owner.equals(CustomSkullType.SILVERFISH.getOwner())) 
+						|| (owner.equals(CustomSkullType.SQUID.getOwner()))) {
 					Player player = event.getPlayer();
 					
 					plugin.getServer().getPluginManager().callEvent(new PlayerAnimationEvent(player));
@@ -209,6 +216,10 @@ public class PlayerHeadsListener implements Listener {
 							item = PlayerHeads.Skull(CustomSkullType.ENDERMAN);
 						} else if (owner.equals(CustomSkullType.SPIDER.getOwner())) {
 							item = PlayerHeads.Skull(CustomSkullType.SPIDER);
+						} else if (owner.equals(CustomSkullType.SILVERFISH.getOwner())) {
+							item = PlayerHeads.Skull(CustomSkullType.SILVERFISH);
+						} else if (owner.equals(CustomSkullType.SQUID.getOwner())) {
+							item = PlayerHeads.Skull(CustomSkullType.SQUID);
 						}
 						if (item != null) {
 							event.setCancelled(true);
