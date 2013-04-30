@@ -6,7 +6,8 @@ public enum CustomSkullType {
 	ENDERMAN("Violit", PlayerHeads.format(Lang.HEAD_ENDERMAN)),
 	BLAZE("Blaze_Head", PlayerHeads.format(Lang.HEAD_BLAZE)),
 	SILVERFISH("AlexVMiner", PlayerHeads.format(Lang.HEAD_SILVERFISH)),
-	SQUID("squidette8", PlayerHeads.format(Lang.HEAD_SILVERFISH));
+	SQUID("squidette8", PlayerHeads.format(Lang.HEAD_SILVERFISH)),
+	SLIME("Ex_PS3Zocker", PlayerHeads.format(Lang.HEAD_SILVERFISH));
 	
 	private final String owner;
 	private final String displayName;

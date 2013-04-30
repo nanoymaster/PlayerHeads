@@ -121,6 +121,9 @@ public class PlayerHeadsListener implements Listener {
 		case SQUID:
 			EntityDeathHelper(event, CustomSkullType.SQUID, plugin.configFile.getDouble("squiddroprate")*lootingrate);
 			break;
+		case SLIME:
+			EntityDeathHelper(event, CustomSkullType.SLIME, plugin.configFile.getDouble("slimedroprate")*lootingrate);
+			break;
 		}
 	}
 	
@@ -157,6 +160,8 @@ public class PlayerHeadsListener implements Listener {
 						PlayerHeads.formatMsg(player, Lang.CLICKINFO2, CustomSkullType.SILVERFISH.getDisplayName());
 					} else if (ownerStrip.equals(CustomSkullType.SQUID.getOwner())) {
 						PlayerHeads.formatMsg(player, Lang.CLICKINFO2, CustomSkullType.SQUID.getDisplayName());
+					} else if (ownerStrip.equals(CustomSkullType.SLIME.getOwner())) {
+						PlayerHeads.formatMsg(player, Lang.CLICKINFO2, CustomSkullType.SLIME.getDisplayName());
 					} else if (ownerStrip.equals(CustomSkullType.SPIDER.getOwner())) {
 						PlayerHeads.formatMsg(player, Lang.CLICKINFO2, CustomSkullType.SPIDER.getDisplayName());
 					} else {
@@ -196,6 +201,7 @@ public class PlayerHeadsListener implements Listener {
 						|| (owner.equals(CustomSkullType.ENDERMAN.getOwner()))
 						|| (owner.equals(CustomSkullType.SPIDER.getOwner()))
 						|| (owner.equals(CustomSkullType.SILVERFISH.getOwner())) 
+						|| (owner.equals(CustomSkullType.SLIME.getOwner())) 
 						|| (owner.equals(CustomSkullType.SQUID.getOwner()))) {
 					Player player = event.getPlayer();
 					
@@ -220,6 +226,8 @@ public class PlayerHeadsListener implements Listener {
 							item = PlayerHeads.Skull(CustomSkullType.SILVERFISH);
 						} else if (owner.equals(CustomSkullType.SQUID.getOwner())) {
 							item = PlayerHeads.Skull(CustomSkullType.SQUID);
+						} else if (owner.equals(CustomSkullType.SLIME.getOwner())) {
+							item = PlayerHeads.Skull(CustomSkullType.SLIME);
 						}
 						if (item != null) {
 							event.setCancelled(true);
