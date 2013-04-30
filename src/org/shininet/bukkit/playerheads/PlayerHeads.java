@@ -69,7 +69,7 @@ public final class PlayerHeads extends JavaPlugin implements Listener {
 	private static boolean updateReady = false;
 	private static String updateName = "";
 	private static long updateSize = 0;
-	public static final String updateSlug = "player-heads";
+	public static final String updateSlug = "communityplayerheads";
 	public static int defaultStackSize = 1;
 
 	

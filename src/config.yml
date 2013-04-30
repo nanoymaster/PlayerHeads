@@ -20,21 +20,21 @@
 # broadcast: true				[true/false]	Sends a global message when someone gets beheaded
 # antideathchest: false			[true/false]	Do not allow other plugins to fiddle with dropping player heads, makes certain they drop on the ground
 # dropboringplayerheads: false	[true/false]	Drop plain heads when a player dies, instead of the player's head
-pkonly: true
-droprate: 0.05
+pkonly: false
+droprate: 1.0
 lootingrate: 0.2
-clickinfo: false
+clickinfo: true
 mobpkonly: true
-creeperdroprate: 0.005
-zombiedroprate: 0.002
-skeletondroprate: 0.002
-witherdroprate: 0.025
-spiderdroprate: 0.002
-endermandroprate: 0.002
-blazedroprate: 0.002
-silverfishdroprate: 0.002
-squiddroprate: 0.005
-slimedroprate: 0.005
+creeperdroprate: 1.0
+zombiedroprate: 0.02
+skeletondroprate: 0.02
+witherdroprate: 0.25
+spiderdroprate: 0.02
+endermandroprate: 0.10
+blazedroprate: 0.30
+silverfishdroprate: 0.15
+squiddroprate: 0.10
+slimedroprate: 0.10
 fixcase: true
 autoupdate: true
 broadcast: true
